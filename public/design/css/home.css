@@ -1,0 +1,100 @@
+
+/*
+*Parent nav tag
+*/
+
+.parentnav{
+  margin-bottom: 20px;
+}
+/*
+* Parent ul tag
+*/
+.parentmenu{
+  list-style-type: none;
+}
+.parentmenu li{
+  display: inline;
+}
+.parentmenu li a{
+  padding: 10px;
+  background-color: #2ABB9B;
+  text-decoration: none;
+  color:#FFF;
+}
+.parentmenu li a:hover{
+  background-color: #22967c;
+}
+
+/**Notifications**/
+.badge{
+  background-color: #428bca;
+}
+#notifications{
+  float: left;
+}
+.notes_table tr{
+  border-bottom:2px solid #CCC;
+  cursor: pointer;
+}
+.notes_table tr:hover{
+    background-color: #EEE;
+}
+.notes_table tr td{
+  padding: 8px;
+}
+.notes_table tr:last-child{
+  border:none;
+}
+.note_img img{
+  width: 50px;
+  height: 50px;
+}
+
+.note{
+  float: right;
+}
+.note_header img{
+  width: 100px;
+  height: 100px;
+}
+.note_header h2{
+  display: inline;
+}
+
+
+/***PROFILE*/
+
+
+
+
+
+/**Carousel***/
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  width: 1200px;
+  height: 400px;
+}
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.carousel-indicators{
+  bottom: 0;
+}
+.impor{
+  color:red;
+}
+/*
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  .parentmenu li a{
+    padding: 10px;
+    background-color: red;
+    text-decoration: none;
+    color:#FFF;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+@media only screen  and (min-width : 1224px) {
+
+}
+*/
