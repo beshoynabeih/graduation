@@ -1,0 +1,23 @@
+app.blade.php yields
+**********************
+title
+style //in header style tag
+header //in head tag
+content
+scripts
+
+account type
+***********
+1 parent
+2 teacher
+3 affairs
+4 admin
+
+
+
+TODO:
+  1-Tables.                       // DONE
+  2-Student operations by admin
+    *Register Students
+  3-Teacher                       //
+  4-Student Affairs               //

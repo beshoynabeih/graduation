@@ -7,7 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     /*
@@ -38,6 +39,17 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    }
+    protected function authenticated(Request $request, User $user){
+      if($user->type == 4)
+        return redirect('/admin');
+      else if($user->type == 3)
+        return redirect('/affairs');
+      else if($user->type == 2)
+        return redirect('/teacher');
+      else if($user->type == 1)
+        return redirect('/parent');
+      return view('home');
     }
 
     /**
