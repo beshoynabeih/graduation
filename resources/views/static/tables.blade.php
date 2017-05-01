@@ -11,7 +11,7 @@
       <div class="select-grade">
         <form class="form-inline" method="get" action="{{ url('/tables') }}">
           {{ csrf_field() }}
-          <select class="form-control" name="select_grade">
+          <select class="form-control" name="select_grade" onchange="this.form.submit()">
             <option @if($lectures[0]->grade == 'first grade') selected  @endif value="first grade">First Grade</option>
             <option @if($lectures[0]->grade == 'second grade') selected  @endif value="second grade">Second Grade</option>
             <option @if($lectures[0]->grade == 'third grade') selected  @endif value="third grade">Third Grade</option>
@@ -19,7 +19,6 @@
             <option @if($lectures[0]->grade == 'fifth grade') selected  @endif value="fifth grade">Fifth Grade</option>``
             <option @if($lectures[0]->grade == 'sixth grade') selected  @endif value="sixth grade">Sixth Grade</option>
           </select>
-          <button type="Submit" class="btn btn-success">Get Table</button>
         </form>
       </div>
     </div>

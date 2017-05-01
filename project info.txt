@@ -18,6 +18,9 @@ account type
 TODO:
   1-Tables.                       // DONE
   2-Student operations by admin
-    *Register Students
+    *Register Students			  //done
+    *manage students(edit,del, update) //done
+    *send notication
+    *upload results 		
   3-Teacher                       //
   4-Student Affairs               //

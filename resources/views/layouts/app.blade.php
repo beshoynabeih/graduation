@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title')</title>
-<link href="images/favicon.png" rel="shortcut icon" />
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/custom.css">
-<script src="js/jquery.min.js"></script>
+<link href="{{url('images/favicon.png')}}" rel="shortcut icon" />
+<link href="{{url('css/bootstrap.min.css')}} " rel="stylesheet" />
+<link href="{{url('css/flexslider.css')}}" rel="stylesheet" />
+<link href="{{url('css/style.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{url('css/custom.css')}}">
+<script src="{{url('js/jquery.min.js')}}"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
 <style>
@@ -20,8 +20,8 @@
 </head>
 <body>
 <div class="header">
-  <div class="container"> <a class="navbar-brand" href="{{ url('/') }}"><img id="logo-img" src="images/favicon.png"/></a>
-    <div class="menu"> <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
+  <div class="container"> <a class="navbar-brand" href="{{ url('/') }}"><img id="logo-img" src="{{url('images/favicon.png')}}"/></a>
+    <div class="menu"> <a class="toggleMenu" href="#"><img src="{{url('images/nav_icon.png')}}" alt="" /> </a>
       <ul class="nav" id="nav">
         <li class="current"><a href="{{ url('/') }}">Home</a></li>
         <li><a href="{{ url('/teachers') }}">Teachers</a></li>
@@ -55,7 +55,7 @@
         @endif
         <div class="clear"></div>
       </ul>
-      <script type="text/javascript" src="js/responsive-nav.js"></script>
+      <script type="text/javascript" src="{{url('js/responsive-nav.js')}}"></script>
     </div>
   </div>
 </div>
@@ -72,14 +72,14 @@
 </div>
 <script>
 document.getElementById("logo-img").onmouseover = function(){
-	document.getElementById("logo-img").setAttribute("src", "images/favicon2.png");
+	document.getElementById("logo-img").setAttribute("src", "{{url('images/favicon2.png')}}");
 };
 document.getElementById("logo-img").onmouseout = function(){
-	document.getElementById("logo-img").setAttribute("src", "images/favicon.png");
+	document.getElementById("logo-img").setAttribute("src", "{{url('images/favicon.png')}}");
 };
 </script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider.js"></script>
+<script src="{{url('js/bootstrap.min.js')}}"></script>
+<script src="{{url('js/jquery.flexslider.js')}}"></script>
 @yield('scripts')
 </body>
 </html>

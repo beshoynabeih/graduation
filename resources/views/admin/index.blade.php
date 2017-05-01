@@ -2,29 +2,31 @@
 
 @section('content')
 <div class="container">
-  <div class="select-grade">
-  <form class="navbar-form navbar-left">
-    <div style="display:inline-block" class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Select Grade
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-        <li><a href="#">First Yeat</a></li>
-        <li><a href="#">Second Year</a></li>
-        <li><a href="#">Third Year</a></li>
-        <li><a href="#">Fourth Year</a></li>
-        <li><a href="#">Fifth Year</a></li>
-        <li><a href="#">Sixth Year</a></li>
-      </ul>
-  </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+    <div class="select-grade">
+      <form class="navbar-form navbar-left">
+        <div style="display:inline-block" class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select Grade
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+            <li><a href="#">First Yeat</a></li>
+            <li><a href="#">Second Year</a></li>
+            <li><a href="#">Third Year</a></li>
+            <li><a href="#">Fourth Year</a></li>
+            <li><a href="#">Fifth Year</a></li>
+            <li><a href="#">Sixth Year</a></li>
+          </ul>
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
-        <a href="{{ url('/updatetables') }}" class="btn btn-default">Update Tables</a>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+            <a href="{{ url('/updatetables') }}" class="btn btn-default">Update Tables</a>
+            <a href="{{ url('/addemployee') }}" class="btn btn-default">Add Employee</a>
       </form>
-  </div>
+    </div><br><br/>
+  @include('errors.showmessages')
   <table class="table table-hover">
     <table class="table table-hover">
       <thead>

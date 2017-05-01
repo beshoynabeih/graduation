@@ -23,7 +23,7 @@ input{
   <div class="row">
     <div class="col-md-4">
       <div class="select-grade">
-        <form class="form-inline" method="get" action="{{ url('/updatetables') }}">
+        <form class="form-inline" method="get" action="{{ url('/affairs/updatetables') }}">
           {{ csrf_field() }}
           <select class="form-control" name="select_grade" onchange="this.form.submit()">
             <option @if($lectures[0]->grade == 'first grade') selected  @endif value="first grade">First Grade</option>
@@ -40,7 +40,7 @@ input{
   </div>
   <div class="row">
     @include('errors.showmessages')
-    <form class="" action="{{ url('/posttable') }}" method="post">
+    <form class="" action="{{ url('/affairs/posttable') }}" method="post">
       {{ csrf_field() }}
     <table class="table table-hover">
         <thead>

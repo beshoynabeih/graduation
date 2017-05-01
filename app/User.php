@@ -3,7 +3,10 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use App\Student;
+use App\Teacher;
+use DB;
 class User extends Authenticatable
 {
     /**
@@ -23,6 +26,55 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public static function registerEmployee($request)
+    {
+        if($request->type == 'teacher')
+        {
+            
+            DB::transaction(function($request) use($request){
+                $grade = $request->g1 . ",";
+                $grade .= $request->g2 . ",";
+                $grade .= $request->g3 . ",";
+                $grade .= $request->g4 . ",";
+                $grade .= $request->g5 . ",";
+                $grade .= $request->g6;
+                $res = self::create([
+                    'name' => $request->name,
+                    'type' => 1,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->password)
+                ]);
+                if($res)
+                {
+                    Teacher::create([
+                        'user_id' => $res->id,
+                        'subject' => $request->subject,
+                        'grade' => $grade,
+                        'bio' => $request->bio
+                    ]);
+                }
+            });
+            return true;
+        }else if($request->type == 'affairs')
+        {
+            self::create([
+                    'name' => $request->name,
+                    'type' => 3,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->password)
+                ]);
+            return true;
+        }else
+        {
+            self::create([
+                    'name' => $request->name,
+                    'type' => 0,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->password)
+                ]);
+            return true;
+        }
+    }
     public function student()
     {
       return $this->hasMany(Student::class);

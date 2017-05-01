@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Routing\Router;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -11,9 +11,11 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Router $router)
     {
         //
+        $router->pattern('id', '[0-9]+');
+        parent::boot($router);
     }
 
     /**

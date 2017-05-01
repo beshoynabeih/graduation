@@ -37,9 +37,6 @@ Route::get('/contact', function(){
 /*
  * Admin
  */
-Route::get('/admin', function(){
-    return view('admin.index');
-})->middleware('admin');
 
 Route::get('/parent', function(){
     return view('parent.index');
@@ -56,15 +53,26 @@ Route::get('/addstudent',  "AffairsController@addStudentForm");
 
 //insert parent in users tables and student in students table
 Route::post('/postuser', 'AffairsController@registerUser');
+Route::post('/getgradestudents', 'AffairsController@getGradeStudents');
+Route::get('/student/edit/{id}', 'AffairsController@editStudentForm');
+Route::post('/student/update', 'AffairsController@updateStudent');
+Route::get('/student/delete/{id}', 'AffairsController@deleteStudent');
+Route::get('/student/payfees/{id}', 'AffairsController@payFees');
+Route::get('/student/sendnotification/{id}', 'AffairsController@sendNotificationForm');
+Route::post('/student/sendnotification/{id}', 'AffairsController@sendNotification');
+Route::get('/student/result/{id}', 'AffairsController@resultsForm');
+Route::get('/student/results/{id}/manage', 'AffairsController@resultsManageForm');
+Route::post('/student/postresult/{id}', 'AffairsController@postResult');
+Route::get('/student/result/{id}/{type?}/edit', 'AffairsController@resultsManageForm');
+Route::get('/student/result/{id}/{type?}/delete', 'AffairsController@deleteResult');
 
-
-
+Route::get('/affairs/updatetables', 'AffairsController@updateTableForm');
+Route::post('/affairs/posttable', 'AffairsController@postTable');
 /*
- *Misc Controller
+ *Admin Routes
  */
-Route::post('/table',[
-  'uses' => 'AdminController@getTable',
-  'as' => 'getTable'
-]);
+Route::get('/admin', 'AdminController@index');
 Route::get('/updatetables', 'AdminController@updateTableForm');
 Route::post('/posttable', 'AdminController@postTable');
+Route::get('/addemployee', 'AdminController@addEmployeeForm');
+Route::post('/addemployee', 'AdminController@postEmployee');
