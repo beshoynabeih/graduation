@@ -32,7 +32,7 @@ class Student extends Model
     {
       return DB::select("SELECT * from students");
     }
-    public function getGradeStudent($grade)
+    public static function getGradeStudent($grade)
     {
       return DB::select("SELECT * FROM students where grade=?",[$grade]);
     }
@@ -40,6 +40,7 @@ class Student extends Model
     {
       return DB::select("SELECT * from students where name like '%$value%'")->paginate(1);
     }
+    
     public function parent()
     {
       return $this->belongsTo('App\User');

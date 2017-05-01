@@ -17,8 +17,7 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
-
+Route::post('/contact/postrequest', 'MiscController@postRequest');
 
 /*
  *Static Pages
@@ -42,16 +41,12 @@ Route::get('/parent', function(){
     return view('parent.index');
 })->middleware('parent');
 
-Route::get('/teacher', function(){
-    return view('teacher.index');
-})->middleware('teacher');
+
 
 
 ///Student Affairs
 Route::get('/affairs', 'AffairsController@indexForm');
 Route::get('/addstudent',  "AffairsController@addStudentForm");
-
-//insert parent in users tables and student in students table
 Route::post('/postuser', 'AffairsController@registerUser');
 Route::post('/getgradestudents', 'AffairsController@getGradeStudents');
 Route::get('/student/edit/{id}', 'AffairsController@editStudentForm');
@@ -76,3 +71,15 @@ Route::get('/updatetables', 'AdminController@updateTableForm');
 Route::post('/posttable', 'AdminController@postTable');
 Route::get('/addemployee', 'AdminController@addEmployeeForm');
 Route::post('/addemployee', 'AdminController@postEmployee');
+
+/*
+*Teacher Routes
+*/
+Route::get('/teacher',  'TeacherController@index');
+Route::get('/teacher/managestudents', 'TeacherController@manageStudentsForm');
+Route::get('/teacher/student/result/{id}', 'TeacherController@resultForm');
+Route::get('/teacher/student/sendnotification/{id}', 'TeacherController@notesForm');
+Route::post('/teacher/student/postresult/{id}', 'TeacherController@postResult');
+Route::post('/teacher/student/sendnotification/{id}', 'TeacherController@postNotification');
+Route::get('/teacher/answerquestions', 'TeacherController@answerQuestionsForm');
+Route::post('/teacher/answer/{id}', 'TeacherController@answerQuestion');

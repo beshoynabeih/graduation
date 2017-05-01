@@ -10,7 +10,7 @@ Welcome mr.Beshoo
 <div class="container">
   <nav class="parentnav">
     <ul class="parentmenu" id="parentmenu">
-        <li><a href="notification.html">Notifications <span class="badge">4</span></a></li>
+        <li><a href="{{url('/notifications')}}">Notifications <span class="badge">4</span></a></li>
         <li><a href="comingexams.html">Coming Exams</a></li>
         <li><a href="result.html">Result</a></li>
         <li><a href="askquestion.html">Ask question</a></li>

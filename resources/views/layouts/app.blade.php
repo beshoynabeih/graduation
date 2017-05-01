@@ -23,11 +23,11 @@
   <div class="container"> <a class="navbar-brand" href="{{ url('/') }}"><img id="logo-img" src="{{url('images/favicon.png')}}"/></a>
     <div class="menu"> <a class="toggleMenu" href="#"><img src="{{url('images/nav_icon.png')}}" alt="" /> </a>
       <ul class="nav" id="nav">
-        <li class="current"><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="{{ url('/teachers') }}">Teachers</a></li>
-        <li><a href="{{ url('/tables') }}">Tables</a></li>
-        <li><a href=" {{ url('/about') }}">About Us</a></li>
-        <li><a href="{{ url('contact') }}">Contact Us</a></li>
+        <li ><a href="{{ url('/') }}">Home</a></li>
+        <li ><a href="{{ url('/teachers') }}">Teachers</a></li>
+        <li ><a href="{{ url('/tables') }}">Tables</a></li>
+        <li ><a href=" {{ url('/about') }}">About Us</a></li>
+        <li ><a href="{{ url('contact') }}">Contact Us</a></li>
         @if (Auth::guest())
         <li><a href="{{ url('/login') }}">Login</a></li>
         @else
@@ -39,6 +39,9 @@
             <ul class="dropdown-menu" role="menu">
               @if(Auth::user()->type == 4)
               <li><a href="{{ url('/admin') }}"></i>Dashboard</a></li>
+              <li><a href="{{ url('/updatetables') }}"></i>Update Tables</a></li>
+
+              <li><a href="{{ url('/addemployee') }}"></i>Add Employee</a></li>
               @endif
               @if(Auth::user()->type == 3)
               <li><a href="{{ url('/affairs') }}"></i>Dashboard</a></li>

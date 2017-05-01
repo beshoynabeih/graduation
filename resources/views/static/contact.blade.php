@@ -13,31 +13,33 @@
     <div class="row contact_top">
       <div class="col-md-4 contact_details">
         <h5>Mailing address:</h5>
-        <div class="contact_address">321 Awesome Street, New York, NY 17022</div>
+        <div class="contact_address">Minia, Taha hussen</div>
       </div>
       <div class="col-md-4 contact_details">
         <h5>Call us:</h5>
-        <div class="contact_address"> +1 800 123 1234<br>
+        <div class="contact_address"> 02 01273531574<br>
         </div>
       </div>
       <div class="col-md-4 contact_details">
         <h5>Email us:</h5>
-        <div class="contact_mail"> info@companyname.com</div>
+        <div class="contact_mail"> beshoybosha231@gmail.com</div>
       </div>
     </div>
     <div class="contact_bottom">
       <h3>Contact Form</h3>
-      <p>Mauris a vulputate lectus at blandit nisi. Donec eleifend vel felis vitae auctor aenean rhoncus sapien sollicitudin leo interdum.</p>
-      <form method="post" action="contact-post.html">
+      @include('errors.showmessages')
+     
+      <form method="post" action="{{url('/contact/postrequest')}}">
+      {{ csrf_field() }}
         <div class="contact-to">
-          <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-          <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-          <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
+          <input type="text" class="text" value="{{old('name')}}" name="name" placeholder="Name">
+          <input type="text" class="text" value="{{old('email')}}" name="email" placeholder="Email">
+          <input type="text" class="text" value="{{old('subject')}}" name="subject" placeholder="Subject">
         </div>
         <div class="text2">
-          <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
+          <textarea name="content">@if(old('content')){{old('content')}} @else message... @endif</textarea>
         </div>
-        <div> <a href="#" class="submit">Send Message</a> </div>
+        <div> <button type="submit" class="submit">Send Message</button> </div>
       </form>
     </div>
   </div>

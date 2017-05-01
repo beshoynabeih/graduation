@@ -5,11 +5,9 @@
 @section('content')
 <div class="container">
   <nav class="parentnav">
-    <ul class="parentmenu" id="parentmenu">
-        <li><a href="notification.html" title="For new questions to answer it">Notifications <span class="badge">3</span></a></li>
-        <li><a href="uploadresults.html">Manage Students</a></li>
-        <li><a href="Questions.html">Answer Questions <span class="badge">2</span></a></li>
-        <li><a href="info.html">Info</a></li>
+    <ul class="parentmenu" id="parentmenu">        
+        <li><a href="{{url('/teacher/managestudents')}}">Manage Students</a></li> {{-- for results and  send notes--}}
+        <li><a href="{{url('/teacher/answerquestions')}}">Answer Questions <span class="badge">{{$questions_count}}</span></a></li>
         <div class="clear"></div>
     </ul>
   </nav>

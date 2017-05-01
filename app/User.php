@@ -40,7 +40,7 @@ class User extends Authenticatable
                 $grade .= $request->g6;
                 $res = self::create([
                     'name' => $request->name,
-                    'type' => 1,
+                    'type' => 2,
                     'email' => $request->email,
                     'password' => bcrypt($request->password)
                 ]);
@@ -78,5 +78,9 @@ class User extends Authenticatable
     public function student()
     {
       return $this->hasMany(Student::class);
+    }
+    public function teacher()
+    {
+        return $this->hasMany(Teacher::class);
     }
 }

@@ -4,7 +4,7 @@
 <div class="container">
   @include('errors.showmessages')
   <div class="select-grade">
-  <form method="post" action="{{url('/getgradestudents')}}" class="navbar-form navbar-left">
+    <form method="post" action="{{url('/getgradestudents')}}" class="navbar-form navbar-left">
           {{ csrf_field() }}
           <select class="form-control" name="select_grade" onchange="this.form.submit()">
             <option selected value="all grades">All Students</option>
@@ -22,7 +22,7 @@
         <button type="submit" class="btn btn-default">Search</button>
         <a href="{{ url('/addstudent') }}" class="btn btn-info">Add Student</a>
         <a href="{{ url('/affairs/updatetables') }}" class="btn btn-info">Update Tables</a>
-      </form>
+    </form>
   </div>
 
     <table class="table table-hover">
@@ -64,7 +64,7 @@
             </tr>
           @empty
           <tr>
-            <td colspan="5"><div class="text-center lead alert alert-info">There are now students to show.</div></td>
+            <td colspan="7"><div class="text-center lead alert alert-info">There are now students to show.</div></td>
           </tr>
           @endforelse
         </tbody>

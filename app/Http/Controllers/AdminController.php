@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Tables;
 use App\User;
+use App\Student;
+use App\Question;
+use App\Answer;
+
 class AdminController extends Controller
 {
     //
@@ -15,7 +19,19 @@ class AdminController extends Controller
     }
     public function index()
     {
-      return view('admin.index');
+      $students_count = Student::all()->count();      
+      $teacher_count = User::where('type', 2)->count();
+
+      $employees_count = User::where('type', 3)->count();;
+      $questions_count = Question::all()->count();
+      $anwser_count = Answer::all()->count();
+      return view('admin.index',[
+        's_count' => $students_count,
+        't_count' => $teacher_count,
+        'e_count' => $employees_count,
+        'q_count' => $questions_count,
+        'a_count' => $anwser_count,
+      ]);
     }
     public function updateTableForm(Request $request)
     {

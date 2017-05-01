@@ -1,90 +1,60 @@
 @extends('layouts.app')
 
+@section('title')
+Admin
+@endsection
+@section('header')
+<link rel="stylesheet" type="text/css" href="{{url('css/matrix-style.css')}}">
+@endsection
+
+
+
 @section('content')
 <div class="container">
-    <div class="select-grade">
-      <form class="navbar-form navbar-left">
-        <div style="display:inline-block" class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Select Grade
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-            <li><a href="#">First Yeat</a></li>
-            <li><a href="#">Second Year</a></li>
-            <li><a href="#">Third Year</a></li>
-            <li><a href="#">Fourth Year</a></li>
-            <li><a href="#">Fifth Year</a></li>
-            <li><a href="#">Sixth Year</a></li>
-          </ul>
-        </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-            <a href="{{ url('/updatetables') }}" class="btn btn-default">Update Tables</a>
-            <a href="{{ url('/addemployee') }}" class="btn btn-default">Add Employee</a>
-      </form>
-    </div><br><br/>
-  @include('errors.showmessages')
-  <table class="table table-hover">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-          <th>Grade</th>
-          <th>Fees</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>First Year</td>
-            <td>Yes</td>
-            <td>
-              <a class="btn btn-primary" href="#">Edit</a>
-              <a class="btn btn-danger" href="#">Delete</a>
-              <a class="btn btn-success" href="#">Results</a>
-              <a class="btn btn-info" href="#">Send Notification</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Second Year</td>
-            <td>Yes</td>
-            <td>
-              <a class="btn btn-primary" href="#">Edit</a>
-              <a class="btn btn-danger" href="#">Delete</a>
-              <a class="btn btn-success" href="#">Results</a>
-              <a class="btn btn-info" href="#">Send Notification</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>Second Year</td>
-            <td><span style="color:red" class="impor">No</span></td>
-            <td>
-              <a class="btn btn-primary" href="#">Edit</a>
-              <a class="btn btn-danger" href="#">Delete</a>
-              <a class="btn btn-success" href="#">Results</a>
-              <a class="btn btn-info" href="#">Send Notification</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  </table>
+  <div class="row">
+    <div class="col-md-12">
+      <a href="{{ url('/updatetables') }}" class="btn btn-default">Update Tables</a>
+      <a href="{{ url('/addemployee') }}" class="btn btn-default">Add Employee</a>
+      
+      @include('errors.showmessages')
+      <br><br><br><br>
+      <div class="widget-box widget-plain">
+      <div class="center">
+        <ul class="stat-boxes2">                  
+          <li>
+            <div class="left peity_line_neutral"><span><span style="display: none;"><span style="display: none;"><span style="display: none;"><span style="display: none;">10,15,8,14,13,10,10,15</span><canvas width="50" height="24"></canvas></span>
+              <canvas width="50" height="24"></canvas>
+              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span>10%</div>
+            <div class="right"> <strong>{{$s_count}}</strong> Students </div>
+          </li>
+          <li>
+            <div class="left peity_bar_bad"><span><span style="display: none;"><span style="display: none;"><span style="display: none;"><span style="display: none;">3,5,6,16,8,10,6</span><canvas width="50" height="24"></canvas></span>
+              <canvas width="50" height="24"></canvas>
+              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span>-40%</div>
+            <div class="right"> <strong>{{$t_count}}</strong> Teacher</div>
+          </li>
+          <li>
+            <div class="left peity_line_good"><span><span style="display: none;"><span style="display: none;"><span style="display: none;"><span style="display: none;">12,6,9,23,14,10,17</span><canvas width="50" height="24"></canvas></span>
+              <canvas width="50" height="24"></canvas>
+              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span>+60%</div>
+            <div class="right"> <strong>{{$e_count}}</strong> Employees </div>
+          </li>
+          <li>
+            <div class="left peity_bar_good"><span><span style="display: none;">12,6,9,23,14,10,13</span><canvas width="50" height="24"></canvas></span>+30%</div>
+            <div class="right"> <strong>{{$q_count}}</strong> Questions</div>
+          </li>
+          <li>
+            <div class="left peity_bar_good"><span><span style="display: none;">12,6,9,23,14,10,13</span><canvas width="50" height="24"></canvas></span>+30%</div>
+            <div class="right"> <strong>{{$a_count}}</strong> Answers</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
+@endsection
+@section('scripts')
+<script type="text/javascript" src="{{url('js/matrix.dashboard.js')}}"></script>
+<script type="text/javascript" src="{{url('js/jquery.peity.min.js')}}"></script>
 @endsection
