@@ -9,7 +9,7 @@ Home Page
     <div class="banner-info">
       <h1>Modern School</h1>
       <p>Welcome to Modern School Website. We are happy because you trust us</p>
-      <a class="banner_btn" href="about.html">Read More</a> </div>
+      <a class="banner_btn" href="{{url('/about')}}">Read More</a> </div>
   </div>
 </div>
 <div class="main">
