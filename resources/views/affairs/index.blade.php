@@ -22,6 +22,7 @@
         <button type="submit" class="btn btn-default">Search</button>
         <a href="{{ url('/addstudent') }}" class="btn btn-info">Add Student</a>
         <a href="{{ url('/affairs/updatetables') }}" class="btn btn-info">Update Tables</a>
+        <a href="{{ url('/affairs/showrequests') }}" class="btn btn-info">Show Request</a>
     </form>
   </div>
 

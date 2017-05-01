@@ -77,7 +77,7 @@ class User extends Authenticatable
     }
     public function student()
     {
-      return $this->hasMany(Student::class);
+      return $this->hasMany(Student::class, 'id','parent_id');
     }
     public function teacher()
     {

@@ -33,15 +33,6 @@ Route::get('/contact', function(){
     return view('static.contact');
 });
 
-/*
- * Admin
- */
-
-Route::get('/parent', function(){
-    return view('parent.index');
-})->middleware('parent');
-
-
 
 
 ///Student Affairs
@@ -63,6 +54,7 @@ Route::get('/student/result/{id}/{type?}/delete', 'AffairsController@deleteResul
 
 Route::get('/affairs/updatetables', 'AffairsController@updateTableForm');
 Route::post('/affairs/posttable', 'AffairsController@postTable');
+Route::get('/affairs/showrequests', 'AffairsController@showRequestsForm');
 /*
  *Admin Routes
  */
@@ -83,3 +75,14 @@ Route::post('/teacher/student/postresult/{id}', 'TeacherController@postResult');
 Route::post('/teacher/student/sendnotification/{id}', 'TeacherController@postNotification');
 Route::get('/teacher/answerquestions', 'TeacherController@answerQuestionsForm');
 Route::post('/teacher/answer/{id}', 'TeacherController@answerQuestion');
+
+/*
+ *Parent
+ */
+
+Route::get('/parent', 'ParentController@index');
+Route::get('/parent/notifications', 'ParentController@notificationsForm');
+Route::get('/parent/comingexams', 'ParentController@comingexamsForm');
+Route::get('/parent/resutls', 'ParentController@showResults');
+Route::get('/parent/ask', 'ParentController@askForm');
+Route::post('/parent/postquestion', 'ParentController@postQuestion');

@@ -8,7 +8,7 @@ use App\User;
 class Question extends Model
 {
     //
-    protected $fillable = ['asker_id', 'to_id', 'title', 'question'];
+    protected $fillable = ['asker_id', 'to_id', 'title', 'question', 'seen'];
 
     public function student()
     {

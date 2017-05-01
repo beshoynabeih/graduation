@@ -40,7 +40,10 @@ class Student extends Model
     {
       return DB::select("SELECT * from students where name like '%$value%'")->paginate(1);
     }
-    
+    // public function studentID($id)
+    // {
+    //   return DB::select();
+    // }
     public function parent()
     {
       return $this->belongsTo('App\User');

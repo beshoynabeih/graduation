@@ -21,7 +21,7 @@ class TeacherController extends Controller
     }
     public function index()
     {
-    	$questions_count = Question::where(['to_id' => 3, 'seen' => 0])->count();
+    	$questions_count = Question::where(['to_id' => Auth::user()->id, 'seen' => 0])->count();
 
     	return view('teacher.index', ['questions_count' => $questions_count]);
     }
@@ -106,7 +106,7 @@ class TeacherController extends Controller
     }
     public function answerQuestionsForm()
     {
-    	$questions = Question::where(['to_id' => 3, 'seen' => 0])->get();
+    	$questions = Question::where(['to_id' => Auth::user()->id, 'seen' => 0])->get();
     	return view('teacher.answerquestions', ['questions' => $questions]);
     }
     public function answerQuestion(Request $request, $id)

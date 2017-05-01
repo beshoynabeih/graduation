@@ -10,6 +10,7 @@ use App\Student;
 use App\Notification;
 use App\Result;
 use App\Tables;
+use App\Contact;
 class AffairsController extends Controller
 {
     //
@@ -213,5 +214,10 @@ class AffairsController extends Controller
       //SomeValidation
       if(Tables::postTable($request))
         return redirect('/affairs/updatetables')->with('success', 'Table has been updated');
+    }
+    public function showRequestsForm()
+    {
+      $contacts = Contact::all();
+      return view('affairs.showrequests', ['contacts' => $contacts]);
     }
 }

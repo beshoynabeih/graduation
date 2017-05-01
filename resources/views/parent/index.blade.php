@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-Welcome mr.Beshoo
+Welcome mr.{{Auth::user()->name}}
 @endsection
 @section('header')
 <link rel="stylesheet" href="css/home.css" />
@@ -10,11 +10,10 @@ Welcome mr.Beshoo
 <div class="container">
   <nav class="parentnav">
     <ul class="parentmenu" id="parentmenu">
-        <li><a href="{{url('/notifications')}}">Notifications <span class="badge">4</span></a></li>
-        <li><a href="comingexams.html">Coming Exams</a></li>
-        <li><a href="result.html">Result</a></li>
-        <li><a href="askquestion.html">Ask question</a></li>
-        <li><a href="info.html">Info</a></li>
+        <li><a href="{{url('/parent/notifications')}}">Notifications <span class="badge">{{$notes_count}}</span></a></li>
+        <li><a href="{{url('/parent/comingexams')}}">Coming Exams</a></li>
+        <li><a href="{{url('/parent/resutls')}}">Result</a></li>
+        <li><a href="{{url('/parent/ask')}}">Ask question</a></li>
         <div class="clear"></div>
     </ul>
   </nav>
