@@ -22,6 +22,8 @@ Parent Notifications
 		              <div class="note_content">
 		                <h4>{{$note->type}}</h4>
 		                <p>{{$note->content}}</p>
+		                <h4>Answer:</h4>
+		                <p>{{$note->question->answer->answer}}</p>
 		              </div>
 		            </td>
 		          </tr>

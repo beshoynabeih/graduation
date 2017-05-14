@@ -39,7 +39,9 @@ Route::get('/contact', function(){
 Route::get('/affairs', 'AffairsController@indexForm');
 Route::get('/addstudent',  "AffairsController@addStudentForm");
 Route::post('/postuser', 'AffairsController@registerUser');
-Route::post('/getgradestudents', 'AffairsController@getGradeStudents');
+
+Route::get('/getgradestudents', 'AffairsController@getGradeStudents');
+
 Route::get('/student/edit/{id}', 'AffairsController@editStudentForm');
 Route::post('/student/update', 'AffairsController@updateStudent');
 Route::get('/student/delete/{id}', 'AffairsController@deleteStudent');

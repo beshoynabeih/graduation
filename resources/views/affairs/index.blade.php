@@ -4,8 +4,8 @@
 <div class="container">
   @include('errors.showmessages')
   <div class="select-grade">
-    <form method="post" action="{{url('/getgradestudents')}}" class="navbar-form navbar-left">
-          {{ csrf_field() }}
+    <form method="get" action="{{url('/getgradestudents')}}" class="navbar-form navbar-left">
+         
           <select class="form-control" name="select_grade" onchange="this.form.submit()">
             <option selected value="all grades">All Students</option>
             <option @if($grade == 'first grade') selected @endif value="first grade">First Grade</option>
@@ -15,7 +15,6 @@
             <option @if($grade == 'fifth grade') selected @endif value="fifth grade">Fifth Grade</option>``
             <option @if($grade == 'sixth grade') selected @endif value="sixth grade">Sixth Grade</option>
           </select>
-        
         <div class="form-group">
           <input type="text" class="form-control" name="searchvalue" placeholder="Search">
         </div>

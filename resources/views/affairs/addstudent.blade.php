@@ -26,7 +26,6 @@ Add Student
         <input type="text" class="text" name="parent_name" value="{{ old('parent_name')}}" placeholder="Parent Name">
         <input type="text" class="text" name="email" value="{{old('email')}}" placeholder="Email">
         <input type="text" class="text" name="password" value="{{old('password')}}" placeholder="Password">
-        <input type="text" class="text" name="con_password" value="{{old('con_password')}}" placeholder="Password Confirmation">
         <h3>Student Info</h3>
         <input type="text" class="text" name="student_name" value="{{old('student_name')}}" placeholder="Student Name">
 

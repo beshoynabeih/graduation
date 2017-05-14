@@ -13,8 +13,8 @@ Admin
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <a href="{{ url('/updatetables') }}" class="btn btn-default">Update Tables</a>
-      <a href="{{ url('/addemployee') }}" class="btn btn-default">Add Employee</a>
+      <a href="{{ url('/updatetables') }}" class="submit">Update Tables</a>
+      <a href="{{ url('/addemployee') }}" class="submit">Add Employee</a>
       
       @include('errors.showmessages')
       <br><br><br><br>
@@ -24,27 +24,27 @@ Admin
           <li>
             <div class="left peity_line_neutral"><span><span style="display: none;"><span style="display: none;"><span style="display: none;"><span style="display: none;">10,15,8,14,13,10,10,15</span><canvas width="50" height="24"></canvas></span>
               <canvas width="50" height="24"></canvas>
-              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span>10%</div>
+              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span></div>
             <div class="right"> <strong>{{$s_count}}</strong> Students </div>
           </li>
           <li>
             <div class="left peity_bar_bad"><span><span style="display: none;"><span style="display: none;"><span style="display: none;"><span style="display: none;">3,5,6,16,8,10,6</span><canvas width="50" height="24"></canvas></span>
               <canvas width="50" height="24"></canvas>
-              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span>-40%</div>
+              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span></div>
             <div class="right"> <strong>{{$t_count}}</strong> Teacher</div>
           </li>
           <li>
             <div class="left peity_line_good"><span><span style="display: none;"><span style="display: none;"><span style="display: none;"><span style="display: none;">12,6,9,23,14,10,17</span><canvas width="50" height="24"></canvas></span>
               <canvas width="50" height="24"></canvas>
-              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span>+60%</div>
+              </span><canvas width="50" height="24"></canvas></span><canvas width="50" height="24"></canvas></span></div>
             <div class="right"> <strong>{{$e_count}}</strong> Employees </div>
           </li>
           <li>
-            <div class="left peity_bar_good"><span><span style="display: none;">12,6,9,23,14,10,13</span><canvas width="50" height="24"></canvas></span>+30%</div>
+            <div class="left peity_bar_good"><span><span style="display: none;">12,6,9,23,14,10,13</span><canvas width="50" height="24"></canvas></span></div>
             <div class="right"> <strong>{{$q_count}}</strong> Questions</div>
           </li>
           <li>
-            <div class="left peity_bar_good"><span><span style="display: none;">12,6,9,23,14,10,13</span><canvas width="50" height="24"></canvas></span>+30%</div>
+            <div class="left peity_bar_good"><span><span style="display: none;">12,6,9,23,14,10,13</span><canvas width="50" height="24"></canvas></span></div>
             <div class="right"> <strong>{{$a_count}}</strong> Answers</div>
           </li>
         </ul>

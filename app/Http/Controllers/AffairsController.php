@@ -20,7 +20,8 @@ class AffairsController extends Controller
     }
     public function indexForm()
     {
-      $students = Student::paginate(1);
+        $students = Student::paginate(5);
+
       return view('affairs.index', ['students' => $students, 'grade' => false]);
     }
     public function addStudentForm()
@@ -50,7 +51,7 @@ class AffairsController extends Controller
       if($request->select_grade == 'first grade' || $request->select_grade == 'second grade'|| $request->select_grade == 'third grade'|| $request->select_grade == 'fourth grade'|| $request->select_grade == 'fifth grade'|| $request->select_grade == 'sixth grade' && $request->searchvalue == '')
       {
         //get student in this grade
-        $students = Student::where('grade', $request->select_grade)->paginate(1);
+        $students = Student::where('grade', $request->select_grade)->paginate(30);
         return view('affairs.index', ['students' => $students, 'grade' => $request->select_grade]);
       }else if($request->select_grade == 'all grades' && $request->searchvalue == ''){
         return redirect('/affairs');

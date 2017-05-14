@@ -47,19 +47,19 @@ class ParentController extends Controller
     	for($i=0;$i<6;$i++)
     	{
     		if($grade == 'first grade')
-    			$r = '1,,,,,';
+    			$r = '1';
     		else if($grade == 'second grade')
-    			$r = ',2,,,,';
+    			$r = '2';
     		else if($grade == 'third grade')
-    			$r = ',,3,,,';
+    			$r = '3';
     		else if($grade == 'fourth grade')
-    			$r = ',,,4,,';
+    			$r = '4';
     		else if($grade == 'fifth grade')
-    			$r = ',,,,5,';
+    			$r = '5,';
     		else if($grade == 'sixth grade')
-    			$r = ',,,,,6';
+    			$r = '6';
     	}
-    	$teachers = Teacher::where('grade', $r)->get();
+    	$teachers = Teacher::where('grade', 'like' , '%'.$r.'%')->get();
 
     	return view('parent.askquestion',['teachers' => $teachers]);
     }
