@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title')</title>
 <link href="{{url('images/favicon.png')}}" rel="shortcut icon" />
-<link href="{{url('css/bootstrap.min.css')}} " rel="stylesheet" />
-<link href="{{url('css/flexslider.css')}}" rel="stylesheet" />
-<link href="{{url('css/style.css')}}" rel="stylesheet" />
-<link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
-<link rel="stylesheet" href="{{url('css/custom.css')}}">
-<script src="{{url('js/jquery.min.js')}}"></script>
+<link href="{{secure_url('css/bootstrap.min.css')}} " rel="stylesheet" />
+<link href="{{secure_url('css/flexslider.css')}}" rel="stylesheet" />
+<link href="{{secure_url('css/style.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{secure_url('css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{secure_url('css/custom.css')}}">
+<script src="{{secure_url('js/jquery.min.js')}}"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
 <style>
 @yield('style')
 </style>
@@ -58,7 +58,7 @@
         @endif
         <div class="clear"></div>
       </ul>
-      <script type="text/javascript" src="{{url('js/responsive-nav.js')}}"></script>
+      <script type="text/javascript" src="{{secure_url('js/responsive-nav.js')}}"></script>
     </div>
   </div>
 </div>
@@ -81,8 +81,8 @@ document.getElementById("logo-img").onmouseout = function(){
 	document.getElementById("logo-img").setAttribute("src", "{{url('images/favicon.png')}}");
 };
 </script>
-<script src="{{url('js/bootstrap.min.js')}}"></script>
-<script src="{{url('js/jquery.flexslider.js')}}"></script>
+<script src="{{secure_url('js/bootstrap.min.js')}}"></script>
+<script src="{{secure_url('js/jquery.flexslider.js')}}"></script>
 @yield('scripts')
 </body>
 </html>
