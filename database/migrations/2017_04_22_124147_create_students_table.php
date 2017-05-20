@@ -17,9 +17,9 @@ class CreateStudentsTable extends Migration
             $table->integer('parent_id');
             $table->string('name');
             $table->string('birthday');
+            $table->string('grade');
             $table->text('address');
             $table->integer('fees');
-            $table->string('grade');
             $table->timestamps();
         });
     }

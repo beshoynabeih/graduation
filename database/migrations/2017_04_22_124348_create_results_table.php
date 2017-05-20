@@ -21,6 +21,7 @@ class CreateResultsTable extends Migration
             $table->decimal('science',10, 2);
             $table->decimal('history',10, 2);
             $table->decimal('arts',10, 2);
+            $table->decimal('computer',10, 2);
             $table->timestamps();
         });
     }
