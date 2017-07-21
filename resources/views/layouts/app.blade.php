@@ -6,7 +6,7 @@
 <title>@yield('title')</title>
 <link href="{{asset('images/favicon.png')}}" rel="shortcut icon" />
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
-<link href="{{secure_url('css/flexslider.css')}}" rel="stylesheet" />
+<link href="{{asset('css/flexslider.css')}}" rel="stylesheet" />
 <link href="{{asset('css/style.css" rel="stylesheet')}}" />
 <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/custom.css')}}">
