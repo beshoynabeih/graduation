@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/custom.css">
 <script src="js/jquery.min.js"></script>
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hidesecure_urlbar, 0); }, false); function hidesecure_urlbar(){ window.scrollTo(0,1); } </script>
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
 <style>
 @yield('style')
@@ -20,16 +20,16 @@
 </head>
 <body>
 <div class="header">
-  <div class="container"> <a class="navbar-brand" href="{{ url('/') }}"><img id="logo-img" src="images/favicon.png"/></a>
+  <div class="container"> <a class="navbar-brand" href="{{ secure_url('/') }}"><img id="logo-img" src="images/favicon.png"/></a>
     <div class="menu"> <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
       <ul class="nav" id="nav">
-        <li ><a href="{{ url('/') }}">Home</a></li>
-        <li ><a href="{{ url('/teachers') }}">Teachers</a></li>
-        <li ><a href="{{ url('/tables') }}">Tables</a></li>
-        <li ><a href=" {{ url('/about') }}">About Us</a></li>
-        <li ><a href="{{ url('contact') }}">Contact Us</a></li>
+        <li ><a href="{{ secure_url('/') }}">Home</a></li>
+        <li ><a href="{{ secure_url('/teachers') }}">Teachers</a></li>
+        <li ><a href="{{ secure_url('/tables') }}">Tables</a></li>
+        <li ><a href=" {{ secure_url('/about') }}">About Us</a></li>
+        <li ><a href="{{ secure_url('contact') }}">Contact Us</a></li>
         @if (Auth::guest())
-        <li><a href="{{ url('/login') }}">Login</a></li>
+        <li><a href="{{ secure_url('/login') }}">Login</a></li>
         @else
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -38,21 +38,21 @@
 
             <ul class="dropdown-menu" role="menu">
               @if(Auth::user()->type == 4)
-              <li><a href="{{ url('/admin') }}"></i>Dashboard</a></li>
-              <li><a href="{{ url('/updatetables') }}"></i>Update Tables</a></li>
+              <li><a href="{{ secure_url('/admin') }}"></i>Dashboard</a></li>
+              <li><a href="{{ secure_url('/updatetables') }}"></i>Update Tables</a></li>
 
-              <li><a href="{{ url('/addemployee') }}"></i>Add Employee</a></li>
+              <li><a href="{{ secure_url('/addemployee') }}"></i>Add Employee</a></li>
               @endif
               @if(Auth::user()->type == 3)
-              <li><a href="{{ url('/affairs') }}"></i>Dashboard</a></li>
+              <li><a href="{{ secure_url('/affairs') }}"></i>Dashboard</a></li>
               @endif
               @if(Auth::user()->type == 2)
-              <li><a href="{{ url('/teacher') }}"></i>Dashboard</a></li>
+              <li><a href="{{ secure_url('/teacher') }}"></i>Dashboard</a></li>
               @endif
               @if(Auth::user()->type == 1)
-              <li><a href="{{ url('/parent') }}"></i>Dashboard</a></li>
+              <li><a href="{{ secure_url('/parent') }}"></i>Dashboard</a></li>
               @endif
-                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                <li><a href="{{ secure_url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
             </ul>
           </li>
         @endif
