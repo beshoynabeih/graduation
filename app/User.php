@@ -31,7 +31,7 @@ class User extends Authenticatable
         if($request->type == 'teacher')
         {
             
-            DB::transaction(function($request) use($request){
+            DB::transaction(function($request){
                 $grade = $request->g1 . ",";
                 $grade .= $request->g2 . ",";
                 $grade .= $request->g3 . ",";
