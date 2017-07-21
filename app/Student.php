@@ -11,7 +11,7 @@ class Student extends Model
     protected $fillable = ['parent_id', 'name','birthday','grade'];
     public static function postStudent($request)
     {
-      DB::transaction(function($request) use($request){
+      DB::transaction(function($request){
         $res = User::create([
           'name' => $request->parent_name,
           'email' => $request->email,
