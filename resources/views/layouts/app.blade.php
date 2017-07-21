@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title')</title>
-<link href="{{secure_url('images/favicon.png')}}" rel="shortcut icon" />
-<link href="{{secure_url('css/bootstrap.min.css')}}" rel="stylesheet" />
+<link href="{{asset('images/favicon.png')}}" rel="shortcut icon" />
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
 <link href="{{secure_url('css/flexslider.css')}}" rel="stylesheet" />
-<link href="{{secure_url('css/style.css" rel="stylesheet')}}" />
+<link href="{{asset('css/style.css" rel="stylesheet')}}" />
 <link rel="stylesheet" href="{{secure_url('css/font-awesome.min.css')}}">
 <link rel="stylesheet" href="{{secure_url('css/custom.css')}}">
 <script src="{{secure_url('js/jquery.min.js')}}"></script>
