@@ -8,9 +8,9 @@
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
 <link href="{{secure_url('css/flexslider.css')}}" rel="stylesheet" />
 <link href="{{asset('css/style.css" rel="stylesheet')}}" />
-<link rel="stylesheet" href="{{secure_url('css/font-awesome.min.css')}}">
-<link rel="stylesheet" href="{{secure_url('css/custom.css')}}">
-<script src="{{secure_url('js/jquery.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+<script src="{{asset('js/jquery.min.js')}}"></script>
 <script type="application/x-javascript')}}"> addEventListener("load", function() { setTimeout(hidesecure_urlbar, 0); }, false); function hidesecure_urlbar(){ window.scrollTo(0,1); } </script>
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
 <style>
@@ -58,7 +58,7 @@
         @endif
         <div class="clear"></div>
       </ul>
-      <script type="text/javascript" src="{{secure_url('js/responsive-nav.js')}}"></script>
+      <script type="text/javascript" src="{{asset('js/responsive-nav.js')}}"></script>
     </div>
   </div>
 </div>
@@ -75,14 +75,14 @@
 </div>
 <script>
 document.getElementById("logo-img").onmouseover = function(){
-	document.getElementById("logo-img").setAttribute("src", "{{secure_url('images/favicon2.png')}}");
+	document.getElementById("logo-img").setAttribute("src", "{{asset('images/favicon2.png')}}");
 };
 document.getElementById("logo-img").onmouseout = function(){
-	document.getElementById("logo-img").setAttribute("src", "{{secure_url('images/favicon.png')}}");
+	document.getElementById("logo-img").setAttribute("src", "{{asset('images/favicon.png')}}");
 };
 </script>
-<script src="{{secure_url('js/bootstrap.min.js')}}"></script>
-<script src="{{secure_url('js/jquery.flexslider.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/jquery.flexslider.js')}}"></script>
 @yield('scripts')
 </body>
 </html>
