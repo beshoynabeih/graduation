@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title')</title>
-<link href="images/favicon.png" rel="shortcut icon" />
+<link href="{{echo public_path()}}/images/favicon.png" rel="shortcut icon" />
 <link href="css/bootstrap.min.css " rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/custom.css">
-<script src="js/jquery.min.js"></script>
+<link href="{{echo public_path()}}/css/flexslider.css" rel="stylesheet" />
+<link href="{{echo public_path()}}/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="{{echo public_path()}}/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{echo public_path()}}/css/custom.css">
+<script src="{{echo public_path()}}/js/jquery.min.js"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hidesecure_urlbar, 0); }, false); function hidesecure_urlbar(){ window.scrollTo(0,1); } </script>
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<link href='https://{{echo public_path()}}/fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
 <style>
 @yield('style')
 </style>
