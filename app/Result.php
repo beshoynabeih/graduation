@@ -14,6 +14,6 @@ class Result extends Model
     }
     public static function getTypeResult($id, $type)
     {
-    	return DB::select("SELECT * from Results where student_id = $id and type = '$type'");
+    	return DB::select("SELECT * from results where student_id = $id and type = '$type'");
     }
 }

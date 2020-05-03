@@ -65,6 +65,8 @@ Route::get('/updatetables', 'AdminController@updateTableForm');
 Route::post('/posttable', 'AdminController@postTable');
 Route::get('/addemployee', 'AdminController@addEmployeeForm');
 Route::post('/addemployee', 'AdminController@postEmployee');
+// Route::post('/logout', 'UserController@logout');
+
 
 /*
 *Teacher Routes

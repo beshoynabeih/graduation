@@ -14,6 +14,7 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('type'); //this is for month field but I doen't know wht i named it ype :)
             $table->integer('student_id');
             $table->decimal('arabic',10, 2);
             $table->decimal('english',10, 2);

@@ -64,7 +64,7 @@
             </tr>
           @empty
           <tr>
-            <td colspan="7"><div class="text-center lead alert alert-info">There are now students to show.</div></td>
+            <td colspan="7"><div class="text-center lead alert alert-info">There are no students to show.</div></td>
           </tr>
           @endforelse
         </tbody>

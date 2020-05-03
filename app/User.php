@@ -30,27 +30,27 @@ class User extends Authenticatable
     {
         if($request->type == 'teacher')
         {
-            
             DB::transaction(function($request){
-                $grade = $request->g1 . ",";
-                $grade .= $request->g2 . ",";
-                $grade .= $request->g3 . ",";
-                $grade .= $request->g4 . ",";
-                $grade .= $request->g5 . ",";
-                $grade .= $request->g6;
-                $res = self::create([
-                    'name' => $request->name,
+                $grade = request('g1') . ",";
+                $grade .= request('g2') . ",";
+                $grade .= request('g3') . ",";
+                $grade .= request('g4') . ",";
+                $grade .= request('g5') . ",";
+                $grade .= request('g6');
+                // dd($grade);
+                $res = self::create([                    
+                    'name' => request('name'),
                     'type' => 2,
-                    'email' => $request->email,
-                    'password' => bcrypt($request->password)
+                    'email' => request("email"),
+                    'password' => bcrypt(request('password'))
                 ]);
                 if($res)
                 {
                     Teacher::create([
                         'user_id' => $res->id,
-                        'subject' => $request->subject,
+                        'subject' => request('subject'),
                         'grade' => $grade,
-                        'bio' => $request->bio
+                        'bio' => request('bio')
                     ]);
                 }
             });
@@ -58,19 +58,19 @@ class User extends Authenticatable
         }else if($request->type == 'affairs')
         {
             self::create([
-                    'name' => $request->name,
+                    'name' => request('name'),
                     'type' => 3,
-                    'email' => $request->email,
-                    'password' => bcrypt($request->password)
+                    'email' => request('email'),
+                    'password' => bcrypt(request('password'))
                 ]);
             return true;
         }else
         {
             self::create([
-                    'name' => $request->name,
+                    'name' => request('name'),
                     'type' => 0,
-                    'email' => $request->email,
-                    'password' => bcrypt($request->password)
+                    'email' => request('email'),
+                    'password' => bcrypt(request('password'))
                 ]);
             return true;
         }

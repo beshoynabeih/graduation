@@ -13,17 +13,17 @@ class Student extends Model
     {
       DB::transaction(function($request){
         $res = User::create([
-          'name' => $request->parent_name,
-          'email' => $request->email,
-          'password' => bcrypt($request->password),
+          'name' => request('parent_name'),
+          'email' => request('email'),
+          'password' => bcrypt(request('password')),
           'type' => 1
         ]);
         DB::insert("Insert Into students(parent_id, name, birthday, grade, address) VALUES(?,?,?,?,?)",[
           $res->id,
-          $request->student_name,
-          $request->birthday,
-          $request->grade,
-          $request->address
+          request('student_name'),
+          request('birthday'),
+          request('grade'),
+          request('address')
         ]);
       });
       return true;

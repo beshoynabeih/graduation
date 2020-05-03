@@ -70,6 +70,7 @@ class AffairsController extends Controller
     }
     public function updateStudent(Request $request)
     {
+      // dd(User::find(Student::find($request->id)->parent_id ));
       if($request->ch_password === "on")      
       $this->validate($request, [
         'parent_name' => 'required|string',
@@ -81,22 +82,30 @@ class AffairsController extends Controller
         'email' => 'required|email',
       ]);
       $student = Student::find($request->id);
-      $student->name = $request->student_name;
-      $student->parent->name = $request->parent_name;
-      $student->parent->email = $request->email;
+      $parent = User::find($student->parent_id);
+      $student->name = request('student_name');
+      $parent->name = $request->parent_name;
+      $parent->email = $request->email;
 
       if($request->ch_password === "on")
-        $student->parent->password = bcrypt($request->password);
+        $parent->password = bcrypt(request('password'));
 
       $student->grade = $request->grade;
       $student->birthday = $request->birthday;
       $student->address = $request->address;
       $student->save();
+      $parent->save();
+
       return redirect("/affairs")->with('success', "Student data has been updated");
     }
     public function deleteStudent($id)
     {
+      //delete from parent table
+
+      $parent = User::find(Student::find($id)->parent_id)->delete();
+      //delete from student table
       $student = Student::find($id)->delete();
+
       return redirect("/affairs")->with("success", "Student has been deleted");
     }
     public function payFees($id)
